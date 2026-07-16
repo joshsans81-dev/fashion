@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JOSH | Timeless Luxury</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body { 
+            font-family: 'Helvetica Neue', sans-serif; 
+            background: radial-gradient(circle, #0a0a0a 33%, #4f0303 100%);
+            color: #eeeaea; 
+            overflow-x: hidden;
+        }
+
+        a { color: white; text-decoration: none; }
+        a:hover { color: #ec1004; transform: translateX(-10px); transition: 0.2s; display: inline-block; }
+
+        /* Navigation */
+        nav { display: flex; justify-content: space-between; padding: 30px 50px; align-items: center; }
+        .logo { font-size: 1.5rem; font-weight: bold; letter-spacing: 2px; }
+        nav ul { display: flex; list-style: none; gap: 30px; font-size: 0.8rem; letter-spacing: 1px; }
+
+
+        /* Style for the back arrow */
+.nav-left {
+    display: flex;
+    align-items: center;
+}
+
+.back-arrow {
+    font-size: 1rem;
+    color: white;
+    text-decoration: none;
+    transition: transform 0.3s ease, color 0.3s ease;
+    margin-right: 0px;
+    display: block;
+}
+
+.back-arrow:hover {
+    color: #ec1004;
+    transform: translateX(-5px); /* Adds a subtle "moving" effect */
+}
+        /* Split Collections Grid */
+        .collections-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            height: 130vh;
+            width: 100%;
+        }
+
+        .collection-card {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-size: cover;
+            background-position: center;
+            transition: 0.5s ease;
+            cursor: pointer;
+            padding: 20px;
+        }
+
+        #new-fashion { background-image: url(newcollect.jpg); }
+        #monsoon { background-image: url('monsoon.jpg'); }
+
+        .content-box {
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(3px);
+            padding: 40px;
+            max-width: 80%;
+            text-align: center;
+        }
+
+        .content-box h2 { font-size: 3rem; margin-bottom: 20px; text-transform: uppercase; }
+
+        button { 
+            padding: 15px 30px; border: 1px solid #fff; background: transparent; 
+            color: #fff; cursor: pointer; transition: 0.3s; font-weight: bold; margin-top: 20px;
+        }
+        button:hover { background: #e30707; border-color: #e30707; }
+
+        /* Responsive: Stack on mobile */
+        @media (max-width: 768px) {
+            nav { padding: 20px; flex-direction: column; }
+            .collections-grid { grid-template-columns: 1fr; height: auto; }
+            .collection-card { height: 50vh; }
+            .content-box h2 { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        
+        <div class="logo">J.S.H.</div>
+        <div class="nav-left">
+        <!-- Back Arrow -->
+        <a href="index.html" class="back-arrow">&larr; BACK</a>
+        </div>
+        <ul>
+            <li><a href="#">SIGN UP</a></li>
+            <li><a href="#">NEW IN</a></li>
+            <li><a href="collections.html">COLLECTIONS</a></li>
+            <li><a href="#">DEALS</a></li>
+            <li><a href="#">SHOP ALL</a></li>
+        </ul>
+    </nav>
+
+    <main class="collections-grid">
+        <!-- New Fashion Section -->
+        <section class="collection-card" id="new-fashion">
+            <div class="content-box">
+                <h2>NEW FASHION</h2>
+                <p>Curated silhouettes for the contemporary wardrobe.</p>
+                <button>EXPLORE THE EDIT</button>
+            </div>
+        </section>
+
+        <!-- Monsoon Collection Section -->
+        <section class="collection-card" id="monsoon">
+            <div class="content-box">
+                <h2>MONSOON CAPSULE</h2>
+                <p>Weather-resistant luxury. Engineered for the elements.</p>
+                <button>SHOP THE RAIN</button>
+            </div>
+        </section>
+    </main>
+
+</body>
+</html>
