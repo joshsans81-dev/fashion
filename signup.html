@@ -54,6 +54,29 @@
             background: white; border: none; cursor: pointer; font-weight: bold;
         }
 
+        footer {
+    padding: 40px 20px;
+    margin-top: 50px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+    color: #888;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+}
+
+.social-links a {
+    color: #f8047a;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
         /* Image Styling */
         .image-box { width: 400px; height: 500px; }
         .image-box img { width: 100%; height: 100%; object-fit: contain; }
@@ -110,6 +133,17 @@
             <img src="poo.png" alt="Model">
         </div>
     </div>
+
+    <footer>
+    <div class="footer-content">
+        <p>&copy; 2026 J.S.H. Timeless Luxury. All rights reserved.</p>
+        <div class="social-links">
+            <a href="#">Instagram</a>
+            <a href="#">Facebook</a>
+            <a href="#">Contact</a>
+        </div>
+    </div>
+    </footer>
 
     <script>
         const menuToggle = document.getElementById('mobile-menu');
