@@ -14,29 +14,37 @@
             overflow-x: hidden;
         }
 
-        a{
-            color:white;
-            text-decoration: none;
-        }
-        a:hover{
-            color:#ec1004;
-            transform: scale(1.2);
-            transition: 0.2s;
+        a { color: white; text-decoration: none; }
+        a:hover { color: #ec1004; transform: scale(1.0); transition: 0.2s; }
+
+        /* Navigation: Centered Layout */
+        nav { 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            padding: 30px 50px; 
+            gap: 20px; 
+            position: relative; 
         }
 
-        /* Navigation */
-        nav { display: flex; justify-content: space-between; padding: 30px 50px; align-items: center; }
         .logo { font-size: 1.5rem; font-weight: bold; letter-spacing: 2px; }
-        nav ul { display: flex; list-style: none; gap: 30px; font-size: 0.8rem; letter-spacing: 1px; }
+        
+        nav ul { 
+            display: flex; 
+            list-style: none;
+            text-align: center; 
+            gap: 30px; 
+            font-size: 1 rem; 
+            letter-spacing: 1px; 
+            justify-content: center;
+        }
+
+        .menu-toggle { display: none; font-size: 30px; color: white; cursor: pointer; }
 
         /* Hero */
         header { 
-            height: 80vh; 
-            background: url(fashion.jpg);
-            background-size:cover;
-            padding: 20px;
-            margin-left: 0PX;
-            display: flex; align-items: end; padding-left: 100px; 
+            height: 80vh; background: url(fashion.jpg); background-size: cover;
+            padding: 20px; display: flex; align-items: end; padding-left: 100px; 
             box-shadow: 0px 20px 15px rgba(0,0,0,0.5);
         }
         h1 { font-size: 3.5rem; line-height: 1.1; margin-bottom: 20px; }
@@ -49,58 +57,44 @@
         /* Arrivals Section */
         .arrivals { padding: 80px 50px; }
         .arrivals h2 { margin-bottom: 40px; font-weight: 300; font-size: 2rem; text-align: center; }
-        
-        .grid { 
-            display: flex; gap: 20px; justify-content: center; height: 30px;  
-        }
+        .grid { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
 
         .card {
-            position: relative;
-            width: 300px;
-            height: 400px;
-            overflow: hidden;
-            transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
-            cursor: pointer;
+            position: relative; width: 300px; height: 400px; overflow: hidden;
+            transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1); cursor: pointer;
             border: 1px solid rgba(255,255,255,0.1);
         }
-
-        .card img { width: 350px; height: 100%; object-fit:100px; }
+        .card img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
 
         .details {
             position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(125, 3, 41, 0.685);
-            margin-top: 250px;
-            height: 150px;
-            backdrop-filter: blur(0.1px);
-            opacity: 0;
-            display: flex; flex-direction: column;
-            justify-content: center; align-items: center;
-            transition: opacity 0.5s ease;
+            background: rgba(125, 3, 41, 0.685); margin-top: 250px;
+            height: 150px; opacity: 0; display: flex; flex-direction: column;
+            justify-content: center; align-items: center; transition: opacity 0.5s ease;
             padding: 20px; text-align: center;
         }
 
-        /* Hover behavior for Desktop only */
         @media (min-width: 769px) {
             .card:hover { width: 400px; }
             .card:hover .details { opacity: 1; }
         }
 
-        /* Responsive adjustments for Phones */
+        /* Mobile Responsive */
         @media (max-width: 768px) {
-            nav { padding: 20px; flex-direction: column; display:flex; }
-            .hero-content{
-                padding: 50px;
-                background-size: contain;
-                
+            nav { padding: 20px; }
+            .menu-toggle { display: block; }
+            nav ul { 
+                display: none; flex-direction: column; gap: 15px; 
+                position: absolute; top: 120px; left: 0; width: 100%; 
+                background: #3b0505; padding: 20px; z-index: 1000;
             }
-            header { padding: 30px; text-align: left; justify-content: center; height: 350px; font-size: 20px; margin-left: -70px;}
-            h1 { font-size: 1.8rem; }
+            nav ul.active { display: flex; }
             
-            .grid { flex-direction: column; height: auto; align-items: center; }
-            .card { margin-left:-5px; width: 120% !important; height: 400px; }
-            
-            /* Always show some info or simplify for mobile */
-            .details { opacity: 1; color: rgb(241, 238, 238); height: 140px; border-radius:20px; margin-top: 255px; background-color: #2408086c; width: 315px; text-align: center; margin-left: 15px;}
+            header { padding: 20px; height: 250px; background-size: contain; font-size: 15px; align-items: center; text-align: center; padding-left: 20px;}
+            h1 { font-size: 1.3rem; }
+            .grid { flex-direction: column; align-items: center; }
+            .card { width: 100%; max-width: 300px; }
+            .details { opacity: 1; height: 140px; margin-top: 260px; }
         }
     </style>
 </head>
@@ -108,20 +102,20 @@
 
     <nav>
         <div class="logo">J.S.H.</div>
-        <ul>
-            <a href="collections.html"><li>SIGN UP</li></a>
-            <a href="collections.html"><li>NEW IN</li></a>
+        <div class="menu-toggle" id="mobile-menu">☰</div>
+        <ul id="nav-list">
+            <a href="#"><li>SIGN UP</li></a>
+            <a href="#"><li>NEW IN</li></a>
             <a href="collections.html"><li>COLLECTIONS</li></a>
-            <a href="collections.html"><li>DEALS</li></a>
-            <a href="collections.html"><li>SHOP ALL</li></a>
-            
+            <a href="#"><li>DEALS</li></a>
+            <a href="#"><li>SHOP ALL</li></a>
         </ul>
     </nav>
 
     <header>
         <div class="hero-content">
             <h1>THE ESSENCE OF <br> TIMELESS LUXURY.</h1>
-            <p>Exquisite Craftsmanship. Conscious Materials.</p>
+            <p>Exquisite Craftsmanship. <br>Conscious Materials.</p>
             <button>DISCOVER THE CAPSULE</button>
         </div>
     </header>
@@ -133,36 +127,39 @@
                 <img src="card1.jpg" alt="Collection">
                 <div class="details">
                     <h3>Luxury Gowns</h3>
-                    <p>Sophisticated silhouettes for every occasion.</p>
-                    <button style="margin-top: 20px;">SHOP GOWNS</button>
+                    <button style="margin-top: 10px;">SHOP</button>
                 </div>
             </div>
             <div class="card">
                 <img src="card2.jpg" alt="Collection">
                 <div class="details">
                     <h3>Modern Suits</h3>
-                    <p>Precision tailoring meets contemporary design.</p>
-                    <button style="margin-top: 20px;">SHOP SUITS</button>
+                    <button style="margin-top: 10px;">SHOP</button>
                 </div>
             </div>
             <div class="card">
                 <img src="card3.jpg" alt="Collection">
                 <div class="details">
                     <h3>Casual Wear</h3>
-                    <p>Refined comfort for the modern lifestyle.</p>
-                    <button style="margin-top: 20px;">SHOP CASUAL</button>
+                    <button style="margin-top: 10px;">SHOP</button>
                 </div>
             </div>
             <div class="card">
                 <img src="card4.jpg" alt="Collection">
                 <div class="details">
                     <h3>Traditional</h3>
-                    <p>Timeless elegance with a modern edge.</p>
-                    <button style="margin-top: 20px;">SHOP TRADITIONAL</button>
+                    <button style="margin-top: 10px;">SHOP</button>
                 </div>
             </div>
         </div>
     </section>
 
+    <script>
+        const menuToggle = document.getElementById('mobile-menu');
+        const navList = document.getElementById('nav-list');
+        menuToggle.addEventListener('click', () => {
+            navList.classList.toggle('active');
+        });
+    </script>
 </body>
 </html>
