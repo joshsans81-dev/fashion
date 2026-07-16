@@ -73,6 +73,32 @@
             justify-content: center; align-items: center; transition: opacity 0.5s ease;
             padding: 20px; text-align: center;
         }
+        footer {
+    padding: 40px 20px;
+    margin-top: 50px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+    color: #888;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+}
+
+.social-links a {
+    color: #f8047a;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+.social-links a:hover {
+    color: white;
+}
 
         @media (min-width: 769px) {
             .card:hover { width: 400px; }
@@ -153,6 +179,16 @@
             </div>
         </div>
     </section>
+    <footer>
+    <div class="footer-content">
+        <p>&copy; 2026 J.S.H. Timeless Luxury. All rights reserved.</p>
+        <div class="social-links">
+            <a href="#">Instagram</a>
+            <a href="#">Facebook</a>
+            <a href="#">Contact</a>
+        </div>
+    </div>
+</footer>
 
     <script>
         const menuToggle = document.getElementById('mobile-menu');
