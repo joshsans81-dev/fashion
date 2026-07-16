@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JOSH | Sign Up</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body { 
+            font-family: 'Helvetica Neue', sans-serif; 
+            background: linear-gradient( #441212 33%, #0c0000 100%);
+            color: white; 
+            overflow-x: hidden;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        a { color: white; text-decoration: none; }
+        a:hover { color: #ec1004; transform: scale(1.0); transition: 0.2s; }
+
+        /* Navigation */
+        nav { 
+            display: flex; flex-direction: column; align-items: center; 
+            padding: 30px 50px; gap: 20px; position: relative; 
+        }
+        .logo { font-size: 1.5rem; font-weight: bold; letter-spacing: 2px; }
+        nav ul { 
+            display: flex; list-style: none; text-align: center; 
+            gap: 30px; font-size: 1rem; letter-spacing: 1px; justify-content: center;
+        }
+        .menu-toggle { display: none; font-size: 30px; color: #f8047a; cursor: pointer; }
+
+        /* Split Screen Layout */
+        .signup-page { 
+            flex: 1; display: flex; justify-content: center; 
+            align-items: center; gap: 50px; padding: 50px;
+        }
+
+        /* Form Styling */
+        .form-box { 
+            background: rgba(0,0,0,0.3); padding: 40px; 
+            border: 1px solid rgba(255,255,255,0.1); 
+            width: 100%; max-width: 400px; 
+        }
+        .form-box h2 { margin-bottom: 20px; color: #f8047a; }
+        input { 
+            width: 100%; padding: 12px; margin: 10px 0; 
+            background: transparent; border: 1px solid #555; color: white; 
+        }
+        button { 
+            width: 100%; padding: 15px; margin-top: 20px; 
+            background: white; border: none; cursor: pointer; font-weight: bold;
+        }
+
+        /* Image Styling */
+        .image-box { width: 400px; height: 500px; }
+        .image-box img { width: 100%; height: 100%; object-fit: contain; }
+
+        /* New: Mobile Image Styles */
+        .mobile-image-wrapper { display: none; width: 100%; margin-bottom: 20px; text-align: center; }
+        .mobile-image-wrapper img { width: 100%; max-width: 300px; height: auto; border-bottom: 2px solid #f8047a; }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .signup-page { flex-direction: column; text-align: center; padding: 20px; }
+            .image-box { display: none; } 
+            .mobile-image-wrapper { display: block; order: -1; } /* Puts image above form */
+        }
+        @media (max-width: 768px) {
+            .menu-toggle { display: block; }
+            nav ul { 
+                display: none; flex-direction: column; gap: 15px; 
+                position: absolute; top: 100px; width: 100%; 
+                background: #3b0505; padding: 20px; z-index: 1000; 
+            }
+            nav ul.active { display: flex; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">J.S.H.</div>
+        <div class="menu-toggle" id="mobile-menu">☰</div>
+        <ul id="nav-list">
+            <a href="index.html"><li>HOME</li></a>
+            <a href="#"><li>SIGN UP</li></a>
+            <a href="collections.html"><li>COLLECTIONS</li></a>
+            <a href="#"><li>SHOP ALL</li></a>
+        </ul>
+    </nav>
+
+    <div class="signup-page">
+        <!-- New: Image for mobile -->
+        <div class="mobile-image-wrapper">
+            <img src="poo.png" alt="Model">
+        </div>
+
+        <div class="form-box">
+            <h2>SIGN UP</h2>
+            <input type="text" placeholder="Full Name">
+            <input type="email" placeholder="Email Address">
+            <input type="password" placeholder="Password">
+            <button>CREATE ACCOUNT</button>
+        </div>
+        
+        <div class="image-box">
+            <img src="poo.png" alt="Model">
+        </div>
+    </div>
+
+    <script>
+        const menuToggle = document.getElementById('mobile-menu');
+        const navList = document.getElementById('nav-list');
+        menuToggle.addEventListener('click', () => { navList.classList.toggle('active'); });
+    </script>
+</body>
+</html>
