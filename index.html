@@ -10,7 +10,7 @@
         body { 
             font-family: 'Helvetica Neue', sans-serif; 
             background: radial-gradient(circle, #0a0a0a 33%, #4f0303 100%);
-            color: #10c0b4; 
+            color: #f8047a; 
             overflow-x: hidden;
         }
 
@@ -36,7 +36,7 @@
             background-size:cover;
             padding: 20px;
             margin-left: 0PX;
-            display: flex; align-items: center; padding-left: 100px; 
+            display: flex; align-items: end; padding-left: 100px; 
             box-shadow: 0px 20px 15px rgba(0,0,0,0.5);
         }
         h1 { font-size: 3.5rem; line-height: 1.1; margin-bottom: 20px; }
@@ -51,29 +51,31 @@
         .arrivals h2 { margin-bottom: 40px; font-weight: 300; font-size: 2rem; text-align: center; }
         
         .grid { 
-            display: flex; gap: 20px; justify-content: center; height: 400px; 
+            display: flex; gap: 20px; justify-content: center; height: 30px;  
         }
 
         .card {
             position: relative;
-            width: 250px;
+            width: 300px;
             height: 400px;
             overflow: hidden;
-            transition: all 1.6s cubic-bezier(0.23, 1, 0.32, 1);
+            transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
             cursor: pointer;
             border: 1px solid rgba(255,255,255,0.1);
         }
 
-        .card img { width: 450px; height: 80%; object-fit:100px; }
+        .card img { width: 350px; height: 100%; object-fit:100px; }
 
         .details {
             position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(230, 1, 1, 0);
-            backdrop-filter: blur(1px);
+            background: rgba(125, 3, 41, 0.685);
+            margin-top: 250px;
+            height: 150px;
+            backdrop-filter: blur(0.1px);
             opacity: 0;
             display: flex; flex-direction: column;
             justify-content: center; align-items: center;
-            transition: opacity 0.4s ease;
+            transition: opacity 0.5s ease;
             padding: 20px; text-align: center;
         }
 
@@ -85,20 +87,20 @@
 
         /* Responsive adjustments for Phones */
         @media (max-width: 768px) {
-            nav { padding: 20px; flex-direction: column; }
+            nav { padding: 20px; flex-direction: column; display:flex; }
             .hero-content{
-                padding: 40px;
+                padding: 50px;
                 background-size: contain;
                 
             }
-            header { padding: 30px; text-align: justify; justify-content: center; height: 350px; font-size: 20px; margin-left: -70px;}
-            h1 { font-size: 2rem; }
+            header { padding: 30px; text-align: left; justify-content: center; height: 350px; font-size: 20px; margin-left: -70px;}
+            h1 { font-size: 1.8rem; }
             
             .grid { flex-direction: column; height: auto; align-items: center; }
-            .card { width: 100% !important; height: 550px; }
+            .card { margin-left:-5px; width: 120% !important; height: 400px; }
             
             /* Always show some info or simplify for mobile */
-            .details { opacity: 1; color: rgb(241, 238, 238); height: 200px; border-radius:20px; margin-top: 240px; background-color: #2408086c; width: 300px; text-align: center; margin-left: 15px;}
+            .details { opacity: 1; color: rgb(241, 238, 238); height: 140px; border-radius:20px; margin-top: 255px; background-color: #2408086c; width: 315px; text-align: center; margin-left: 15px;}
         }
     </style>
 </head>
